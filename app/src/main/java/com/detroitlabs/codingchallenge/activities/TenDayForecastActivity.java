@@ -9,8 +9,6 @@ import com.detroitlabs.codingchallenge.fragments.TenDayForecastFragment;
  */
 public class TenDayForecastActivity extends SingleFragmentActivity {
 
-    public String hello;
-
     @Override
     protected Fragment createFragment() {
         String city = (String) getIntent().getStringExtra(TenDayForecastFragment.EXTRA_CITY);
