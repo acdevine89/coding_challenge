@@ -32,8 +32,8 @@ import retrofit.client.Response;
  * Created by anniedevine on 9/2/15.
  */
 public class TenDayForecastFragment extends Fragment {
-    public static final String EXTRA_CITY = "com.detroitlabs.android.codingchallenge.city_id";
-    public static final String EXTRA_STATE = "com.detroitlabs.android.codingchallenge.state_id";
+    public static final String EXTRA_CITY = "fragments.city_id";
+    public static final String EXTRA_STATE = "fragments.state_id";
 
     protected final String TAG = getClass().getSimpleName();
     protected RestAdapter restAdapter;
@@ -44,11 +44,22 @@ public class TenDayForecastFragment extends Fragment {
     @Bind(R.id.list_view)
     ListView listView;
 
+    public static TenDayForecastFragment newInstance(String state, String city) {
+        Bundle args = new Bundle();
+        args.putString(EXTRA_STATE, state);
+        args.putString(EXTRA_CITY, city);
+
+        TenDayForecastFragment fragment = new TenDayForecastFragment();
+        fragment.setArguments(args);
+
+        return fragment;
+    }
+
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        String city = (String) getArguments().getString(EXTRA_CITY);
         String state = (String) getArguments().getString(EXTRA_STATE);
+        String city = (String) getArguments().getString(EXTRA_CITY);
     }
 
     @Nullable
@@ -85,16 +96,4 @@ public class TenDayForecastFragment extends Fragment {
 
         return view;
     }
-
-    public static TenDayForecastFragment newInstance(String city, String state) {
-        Bundle args = new Bundle();
-        args.putString(EXTRA_CITY, city);
-        args.putString(EXTRA_STATE, state);
-
-        TenDayForecastFragment fragment = new TenDayForecastFragment();
-        fragment.setArguments(args);
-
-        return fragment;
-    }
-
 }
