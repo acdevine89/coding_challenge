@@ -32,12 +32,14 @@ import retrofit.client.Response;
  * Created by anniedevine on 9/2/15.
  */
 public class TenDayForecastFragment extends Fragment {
-    protected final String TAG = getClass().getSimpleName();
-    protected RestAdapter restAdapter;
-    private static final String BASE_URL = BuildConfig.ROOT_URL + BuildConfig.API_KEY;
-    private WundergroundService wundergroundService;
     public static final String EXTRA_CITY = "com.detroitlabs.android.codingchallenge.city_id";
     public static final String EXTRA_STATE = "com.detroitlabs.android.codingchallenge.state_id";
+
+    protected final String TAG = getClass().getSimpleName();
+    protected RestAdapter restAdapter;
+
+    private static final String BASE_URL = BuildConfig.ROOT_URL + BuildConfig.API_KEY;
+    private WundergroundService wundergroundService;
 
     @Bind(R.id.list_view)
     ListView listView;

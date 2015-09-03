@@ -11,9 +11,9 @@ public class TenDayForecastActivity extends SingleFragmentActivity {
 
     @Override
     protected Fragment createFragment() {
-        String city = (String) getIntent().getStringExtra(TenDayForecastFragment.EXTRA_CITY);
         String state = (String) getIntent().getStringExtra(TenDayForecastFragment.EXTRA_STATE);
-        return TenDayForecastFragment.newInstance(city, state);
+        String city = (String) getIntent().getStringExtra(TenDayForecastFragment.EXTRA_CITY);
+        return TenDayForecastFragment.newInstance(state, city);
     }
 
 

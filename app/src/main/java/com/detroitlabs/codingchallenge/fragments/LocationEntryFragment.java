@@ -115,7 +115,7 @@ public class LocationEntryFragment extends Fragment {
         return editText.getText().toString().isEmpty();
     }
 
-    public static LocationEntryFragment newInstance(String city, String state) {
+    public static LocationEntryFragment newInstance(String state, String city) {
         Bundle args = new Bundle();
         args.putString(ARG_CITY_ID, city);
         args.putString(ARG_STATE_ID, state);
