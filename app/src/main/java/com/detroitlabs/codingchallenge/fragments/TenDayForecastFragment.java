@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.detroitlabs.codingchallenge.BuildConfig;
 import com.detroitlabs.codingchallenge.R;
@@ -91,6 +92,7 @@ public class TenDayForecastFragment extends Fragment {
             @Override
             public void failure(RetrofitError error) {
                 Log.i("response", "failure");
+                Toast.makeText(getActivity(), "Location not found", Toast.LENGTH_SHORT).show();
             }
         });
 

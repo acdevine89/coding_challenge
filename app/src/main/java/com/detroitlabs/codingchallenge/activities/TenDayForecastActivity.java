@@ -15,6 +15,4 @@ public class TenDayForecastActivity extends SingleFragmentActivity {
         String city = (String) getIntent().getStringExtra(TenDayForecastFragment.EXTRA_CITY);
         return TenDayForecastFragment.newInstance(state, city);
     }
-
-
 }
